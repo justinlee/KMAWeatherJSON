@@ -207,7 +207,7 @@ String KMAWeatherJsonClient::getMeteoconIcon(String iconText) {
   if (iconText == "chancerain") return "Q";
   if (iconText == "chancesleet") return "W";
   if (iconText == "chancesnow") return "V";
-  if (iconText == "chancetstorms") return "S";
+  if (iconText == "chancetstorms") return "O";
   if (iconText == "clear") return "B";
   if (iconText == "cloudy") return "Y";
   if (iconText == "flurries") return "F";
@@ -238,9 +238,9 @@ String KMAWeatherJsonClient::getMeteoconIcon(String iconText) {
   if (iconText == "nt_partlycloudy") return "4";
   if (iconText == "nt_partlysunny") return "4";
   if (iconText == "nt_sleet") return "9";
-  if (iconText == "nt_rain") return "7";
+  if (iconText == "nt_rain") return "8";
   if (iconText == "nt_snow") return "#";
-  if (iconText == "nt_sunny") return "4";
+  if (iconText == "nt_sunny") return "2";
   if (iconText == "nt_tstorms") return "&";
 
   return ")";
@@ -278,13 +278,13 @@ String KMAWeatherJsonClient::getWeatherIcon(int sky, int pty, int hour){
           break;
       }
     }
+    break;
     default:
       iconText = ")"; //N/A
       break;
   }
   if(hour < 6 || hour >= 18) //before 6am or after 6 pm
     iconText = "nt_" + iconText;
-    
   return getMeteoconIcon(iconText);
 }
 
